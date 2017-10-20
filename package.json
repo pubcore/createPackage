@@ -1,0 +1,22 @@
+{
+  "bin": {
+    "pubcore-create-package": "cli.js"
+  },
+  "license": "MIT",
+  "name": "pubcore-create-package",
+  "version": "1.0.0",
+  "description": "scaffold npm packages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pubcore/createPackage.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/pubcore/createPackage/issues"
+  },
+  "homepage": "https://github.com/pubcore/createPackage#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "cross-spawn": "^5.1.0"
+  }
+}
