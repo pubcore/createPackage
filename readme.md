@@ -19,10 +19,13 @@
 1) create a directory with git style name
 
 	mkdir myNewProject
+	
 2) and change into it
 
 	cd myNewProject
+	
 3) execute
 
 	pubcore-create-package
+	
 and follow the steps ...
