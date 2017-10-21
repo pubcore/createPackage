@@ -12,30 +12,12 @@ node_modules/
 	npmignore = `\
 src
 dist
-`,
-	packageJson = `
-{
-	"scripts":{
-		"test":"mocha --watch --require babel-register --recursive",
-		"build":"babel src --out-dir js",
-		"prepublish":"npm run build"
-	},
-	"license":"MIT",
-	"babel": {
-        "presets": [
-            "env"
-        ],
-        "plugins": [
-            "transform-object-rest-spread"
-        ]
-    }
-}
 `
 
 fs.writeFileSync('.gitignore', gitigore)
 fs.writeFileSync('.npmignore', npmignore)
 fs.writeFileSync('readme.md', '')
-fs.writeFileSync('package.json', packageJson)
+fs.copyFileSync(__dirname + '/js-packageJson', './package.json')
 if(!fs.existsSync('src')){
 	fs.mkdirSync('src')
 }
@@ -58,18 +40,11 @@ function installPackages(){
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())
 
-	child = spawn('./node_modules/.bin/eslint', ['--init'])
-	child.stdout.pipe(process.stdout)
-	process.stdin.pipe(child.stdin)
-	child.on('exit', (code) => {
-		console.log(`exit creation of .eslintrc.js (exit code ${code})`)
-		console.log('eslint: add mocha plugin ...')
-		result = spawnSync('npm', ['install', '--save-dev', 'eslint-plugin-mocha'])
-		console.log(result.stdout.toString())
-		result.stderr && console.log(result.stderr.toString())
-
-		console.log('add "mocha" to toplevel "plugins" array of .eslintrc.js file')
-		console.log('add "mocha":true to toplevel "env" object of .eslintrc.js file')
-		process.exit()
-	})
+	console.log('eslint: add mocha plugin ...')
+	result = spawnSync('npm', ['install', '--save-dev', 'eslint-plugin-mocha'])
+	console.log(result.stdout.toString())
+	result.stderr && console.log(result.stderr.toString())
+	fs.copyFileSync(__dirname + '/js-eslintrc', './.eslintrc.js')
+	console.log('package prepared successfully')
+	process.exit()
 }
