@@ -6,8 +6,8 @@ module.exports = {
         "mocha": true
     },
     "plugins":[
-        'mocha'
-    ]
+        "mocha"
+    ],
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"
