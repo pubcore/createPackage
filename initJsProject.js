@@ -12,10 +12,14 @@ node_modules/
 	npmignore = `\
 src
 dist
+`,
+	eslintignore = `\
+js
 `
 
 fs.writeFileSync('.gitignore', gitigore)
 fs.writeFileSync('.npmignore', npmignore)
+fs.writeFileSync('.eslintignore', eslintignore)
 fs.writeFileSync('readme.md', '')
 fs.copyFileSync(__dirname + '/js-packageJson', './package.json')
 if(!fs.existsSync('src')){
@@ -35,7 +39,7 @@ function installPackages(){
 	console.log('install packages for transpiler, unit-tests and linter ...')
 	var result = spawnSync(
 		'npm',
-		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'mocha', 'chai', 'eslint']
+		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'watch', 'mocha', 'chai', 'eslint']
 	)
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())
