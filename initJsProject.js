@@ -22,6 +22,7 @@ fs.writeFileSync('.npmignore', npmignore)
 fs.writeFileSync('.eslintignore', eslintignore)
 fs.writeFileSync('readme.md', '')
 fs.copyFileSync(__dirname + '/js-packageJson', './package.json')
+fs.copyFileSync(__dirname + '/js-webpack-config', './webpack.config.js')
 if(!fs.existsSync('src')){
 	fs.mkdirSync('src')
 }
@@ -36,10 +37,10 @@ child.on('exit', (code) => {
 })
 
 function installPackages(){
-	console.log('install packages for transpiler, unit-tests and linter ...')
+	console.log('install packages for transpiler, unit-tests, linter and webpack ...')
 	var result = spawnSync(
 		'npm',
-		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'watch', 'mocha', 'chai', 'eslint']
+		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'watch', 'mocha', 'chai', 'eslint', 'webpack']
 	)
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())

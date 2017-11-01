@@ -3,7 +3,8 @@
 		"test":"mocha --watch --require babel-register --recursive",
 		"build":"babel src --out-dir js",
 		"prepublish":"npm run build",
-		"watch": "watch \"npm run build\" ./src"
+		"watch": "watch \"npm run build\" ./src",
+		"pack": "npm run build && webpack --optimize-minimize"
 	},
 	"main":"js/index.js",
 	"license":"MIT",
