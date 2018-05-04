@@ -12,6 +12,7 @@
 * eslint
 * transpiler for ECS6 with spread operator
 * running tests via mocha and chai
+* webpack to create a dist for manual testing purpose (e.g. codepen)
 
 ### Install it global
 
@@ -30,4 +31,5 @@
 
 		pubcore-create-package
 
-and follow the steps ...
+4) (optional) if your code already exists, copy it into src/index.js.
+(Keep the entry point file 'src/index.js' because of config dependencies)

@@ -38,10 +38,10 @@ child.on('exit', (code) => {
 })
 
 function installPackages(){
-	console.log('install packages for transpiler, unit-tests, linter and webpack ...')
+	console.log('install packages for transpiler, unit-tests, linter and webpack (used for testing) ...')
 	var result = spawnSync(
 		'npm',
-		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'watch', 'mocha', 'chai', 'eslint', 'webpack']
+		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'watch', 'mocha', 'chai', 'eslint', 'webpack-cli', 'webpack']
 	)
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())
