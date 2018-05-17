@@ -23,7 +23,7 @@ fs.writeFileSync('.eslintignore', eslintignore)
 fs.writeFileSync('readme.md', '')
 fs.copyFileSync(__dirname + '/js-packageJson', './package.json')
 fs.copyFileSync(__dirname + '/js-webpack-config', './webpack.config.js')
-fs.copyFileSync(__dirname + '/.travis.yml', './.travis.yml')
+fs.copyFileSync(__dirname + '/js-travis.yml', './.travis.yml')
 if(!fs.existsSync('src')){
 	fs.mkdirSync('src')
 }
