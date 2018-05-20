@@ -17,7 +17,8 @@
 	"homepage": "https://github.com/pubcore/createPackage#readme",
 	"devDependencies": {},
 	"dependencies": {
-		"cross-spawn": "^5.1.0"
+		"cross-spawn": "^5.1.0",
+		"update-notifier": "^2.5.0"
 	},
 	"engines": {
 		"node": ">=8.6.0"

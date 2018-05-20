@@ -15,7 +15,11 @@ dist
 `,
 	eslintignore = `\
 js
-`
+`,
+	updateNotifier = require('update-notifier'),
+	pkg = require('./package.json')
+
+updateNotifier({pkg}).notify()
 
 fs.writeFileSync('.gitignore', gitigore)
 fs.writeFileSync('.npmignore', npmignore)
