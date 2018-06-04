@@ -4,7 +4,7 @@
 	},
 	"license": "MIT",
 	"name": "pubcore-create-package",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"description": "scaffold npm packages",
 	"repository": {
 		"type": "git",
