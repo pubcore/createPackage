@@ -8,10 +8,12 @@ yarn-debug.log*
 yarn-error.log*
 node_modules/
 .npm
+.nyc_output
 `,
 	npmignore = `\
 src
 dist
+.nyc_output
 `,
 	eslintignore = `\
 js
