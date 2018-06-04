@@ -32,7 +32,11 @@ fs.copyFileSync(__dirname + '/js-travis.yml', './.travis.yml')
 if(!fs.existsSync('src')){
 	fs.mkdirSync('src')
 }
-fs.writeFileSync('src/index.js', '')
+if(!fs.existsSync('test')){
+	fs.mkdirSync('test')
+}
+fs.copyFileSync(__dirname + '/js-index-spec-js', './test/index.spec.js')
+fs.writeFileSync('src/index.js', 'export default () => {}')
 
 child = spawn('npm', ['init'])
 child.stdout.pipe(process.stdout)
@@ -43,10 +47,10 @@ child.on('exit', (code) => {
 })
 
 function installPackages(){
-	console.log('install packages for transpiler, unit-tests, linter and webpack (used for testing) ...')
+	console.log('install packages for transpiler, unit-tests, code-coverage, linter and webpack (used for online-test) ...')
 	var result = spawnSync(
 		'npm',
-		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'mocha', 'chai', 'eslint', 'webpack-cli', 'webpack']
+		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'mocha', 'chai', 'eslint', 'nyc', 'coveralls', 'webpack-cli', 'webpack']
 	)
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())

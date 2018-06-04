@@ -1,4 +1,8 @@
-## 1.1.1 2018-06-4
+## 1.2.0 2018-06-04
+* enable code coverage report on running tests
+* add test folder to make "npm run test" working
+
+## 1.1.1 2018-06-04
 * enable debugger (inspect) on "test" execution
 
 ## 1.1.0 2018-05-20

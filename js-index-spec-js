@@ -1,0 +1,6 @@
+import {expect} from 'chai'
+import main from '../src/index'
+
+describe('replace this', () => {
+	expect(main).not.to.be.undefined
+})
