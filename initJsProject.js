@@ -9,6 +9,7 @@ yarn-error.log*
 node_modules/
 .npm
 .nyc_output
+js/
 `,
 	npmignore = `\
 src
