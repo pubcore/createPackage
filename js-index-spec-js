@@ -1,6 +1,8 @@
 import {expect} from 'chai'
 import main from '../src/index'
 
-describe('replace this', () => {
-	expect(main).not.to.be.undefined
+describe('main export', () => {
+	it('is not undefined', () => {
+		expect(main).not.to.be.undefined
+	})
 })
