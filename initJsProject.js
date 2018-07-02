@@ -10,10 +10,11 @@ node_modules/
 .npm
 .nyc_output
 js/
+dist/
 `,
 	npmignore = `\
 src
-dist
+!dist/
 .nyc_output
 `,
 	eslintignore = `\
