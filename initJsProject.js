@@ -54,7 +54,7 @@ function installPackages(){
 	console.log('install packages for transpiler, unit-tests, code-coverage, linter and webpack (used for online-test) ...')
 	var result = spawnSync(
 		'npm',
-		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'mocha', 'chai', 'eslint', 'nyc', 'coveralls', 'webpack-cli', 'webpack']
+		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'mocha', 'chai', 'eslint', 'nyc', 'webpack-cli', 'webpack']
 	)
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())
