@@ -18,7 +18,7 @@ src
 .nyc_output
 `,
 	eslintignore = `\
-js
+/js
 `,
 	updateNotifier = require('update-notifier'),
 	pkg = require('./package.json')
