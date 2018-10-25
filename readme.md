@@ -20,13 +20,13 @@
 	npm install -g pubcore-create-package
 
 ### How to use
-1) create a directory with git style name
+1) create a directory (convention lower case and dash-separated)
 
-		mkdir myNewProject
+		mkdir new-project
 
 2) and change into it
 
-		cd myNewProject
+		cd new-project
 
 3) execute
 
