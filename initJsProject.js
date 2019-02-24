@@ -31,7 +31,6 @@ fs.writeFileSync('.eslintignore', eslintignore)
 fs.writeFileSync('README.md', '')
 fs.writeFileSync('CHANGELOG.md', '')
 fs.copyFileSync(__dirname + '/js-packageJson', './package.json')
-fs.copyFileSync(__dirname + '/js-webpack-config', './webpack.config.js')
 fs.copyFileSync(__dirname + '/js-travis.yml', './.travis.yml')
 if(!fs.existsSync('src')){
 	fs.mkdirSync('src')
@@ -51,10 +50,10 @@ child.on('exit', (code) => {
 })
 
 function installPackages(){
-	console.log('install packages for transpiler, unit-tests, code-coverage, linter and webpack (used for online-test) ...')
+	console.log('install packages for transpiler, unit-tests, code-coverage and linter ...')
 	var result = spawnSync(
 		'npm',
-		['install', '--save-dev', 'babel-cli', 'babel-preset-env', 'babel-plugin-transform-object-rest-spread', 'mocha', 'chai', 'eslint', 'nyc', 'webpack-cli', 'webpack']
+		['install', '--save-dev', '@babel/cli', '@babel/core', '@babel/plugin-proposal-object-rest-spread', '@babel/preset-env', '@babel/register', 'mocha', 'chai', 'eslint', 'nyc']
 	)
 	console.log(result.stdout.toString())
 	result.stderr && console.log(result.stderr.toString())

@@ -1,3 +1,7 @@
+## 1.3.0 2019-02-24
+* remove webpack stuff (very rarely used in context of js packages)
+* move to scoped babel packages
+
 ## 1.2.0 2018-06-04
 * enable code coverage report on running tests
 * add test folder to make "npm run test" working

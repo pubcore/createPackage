@@ -1,8 +1,8 @@
 {
 	"scripts":{
-		"test":"nyc --reporter=text mocha --inspect --require babel-register --require source-map-support --recursive",
+		"test":"nyc --reporter=text mocha --inspect --require @babel/register --require source-map-support --recursive",
 		"build":"babel src --out-dir js",
-		"prepare":"npm run build && webpack --optimize-minimize",
+		"prepare":"npm run build",
 		"watch": "babel --watch src --out-dir js",
 		"coverage": "nyc report --reporter=text-lcov"
 	},
@@ -10,10 +10,10 @@
 	"license":"MIT",
 	"babel": {
         "presets": [
-            "env"
+            "@babel/preset-env"
         ],
         "plugins": [
-            "transform-object-rest-spread"
+            "@babel/plugin-proposal-object-rest-spread"
         ]
     }
 }
